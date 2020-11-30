@@ -1,0 +1,98 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+}
+.box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 150px;
+	height: 40px;
+	background: #262626;
+	box-sizing: border-box;
+	padding: 3px;
+	overflow: hidden;
+}
+.inner{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	overflow: hidden;
+}
+.box:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -50%;
+	width: 50%;
+	height: 100%;
+	background-color: #fff;
+	transition: 0.5s;
+}
+.box:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -50%;
+	width: 50%;
+	height: 100%;
+	background-color: #fff;
+	transition: 0.5s;
+	z-index: 10;
+}
+.inner:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -50%;
+	width: 50%;
+	height: 100%;
+	background-color: #262626;
+	transition: 0.5s;
+}
+.inner:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -50%;
+	width: 50%;
+	height: 100%;
+	background-color: #262626;
+	transition: 0.5s;
+	z-index: 11;
+}
+.box:hover:before{
+	left: 0;
+	transition-delay: 0.1s;
+}
+.box:hover:after{
+	right: 0;
+	transition-delay: 0.1s;
+}
+.box:hover .inner:before{
+	left: 0;
+}
+.box:hover .inner:after{
+	right: 0;
+}
+a{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 200;
+	text-align: center;
+	color: #262626;
+	z-index: 100;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 3px;
+}
+.box:hover a{
+	color: #fff;
+}
